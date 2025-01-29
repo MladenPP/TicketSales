@@ -1,0 +1,14 @@
+{
+    "require": {
+        "twig/twig": "^3.7",
+        "monolog/monolog": "^3.4",
+        "tecnickcom/tcpdf": "^6.6"
+    },
+
+    "autoload":{
+        "psr-4":{
+            "ProdajaKarata\\": "src"
+        }
+
+    }
+}
