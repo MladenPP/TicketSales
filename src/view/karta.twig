@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Karta: {{karta.game}}
+{% endblock %}
+
+{% block main %}
+<hr>
+
+<p class="writing">
+Stadion: {{karta.stadime}}
+</p>
+<p class="writing">
+Utakmica: {{karta.game}}
+</p>
+<p class="writing">
+Orijentacija: {{karta.ticor}}
+</p>
+<p class="writing">
+Vreme: {{karta.time}}
+</p>
+<p class="writing">
+Cena: {{karta.ticprice}}
+</p>
+<p class="writing">
+Preostalo: {{karta.amount}}kom.
+</p>
+
+
+<hr>
+
+{% endblock %}

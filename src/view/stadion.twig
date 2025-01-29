@@ -1,0 +1,28 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Stadion : {{stadion.name}}
+{% endblock %}
+
+{% block main %}
+<hr>
+
+<p class="writing">
+<strong>Ime Stadiona: </strong> {{stadion.name}}
+</p>
+
+<p class="writing">
+<img  src="/src/view/{{stadion.id}}.jpg" alt="Slika Stadiona">
+</p>
+
+<p class="writing">
+<strong>O stadionu: </strong> {{stadion.info}}
+</p>
+
+<form class="writing">
+<input type="button" value="Pregledaj karte" onclick="window.location.href='/karte/{{stadion.id}}/1'">
+</form>
+
+<hr>
+
+{% endblock %}

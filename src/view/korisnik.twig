@@ -1,0 +1,33 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Profil : {{ korisnik.name}}
+{% endblock %}
+
+{% block main %}
+<hr>
+    <p class="writing">Ime: {{ korisnik.name }}</p>
+    <p class="writing">Prezime: {{ korisnik.surname }}</p>
+    <p class="writing">E-mail: {{ korisnik.email }}</p>
+    <p class="writing">Klasa: {{ korisnik.class }}</p>
+    <p class="writing">Balans: {{ korisnik.balance|number_format(2)  }} RSD</p>
+    <form class="writing">
+        <input type="button" value="Promeni" onclick="window.location.href='/edit/{{korisnik.id}}'">
+    </form>
+<hr>
+<hr>
+{% for inv in inventory %}
+    <p class="writing">Stadion: {{ inv.stadiumName }}</p>
+    <p class="writing">Utakmica: {{ inv.game }}</p>
+    <p class="writing">Vreme: {{ inv.time }}</p>
+    <p class="writing">Orijentacija: {{ inv.orientation }}</p>
+    <p class="writing">Cena: {{ inv.price }}</p>
+    <p class="writing">Kolicina: {{ inv.amount  }} kom</p>
+    <hr>
+{% endfor %}
+
+    
+
+     
+
+{% endblock %} 

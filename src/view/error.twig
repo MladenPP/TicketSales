@@ -1,0 +1,16 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <h2 class="writing">Error: {{ errorMessage }}</h2>
+
+{% if buy %}
+<form class="writing">
+<input type="button" value="Povratak na pocetnu" onclick="window.location.href='/'">
+</form>
+{% endif %}
+
+{% endblock %}

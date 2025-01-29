@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Poruke
+{% endblock %}
+
+{% block main %}
+{% for message in messages %}
+{% if korisnik %}
+<hr>
+<p class="writing"> Poruka: {{ message.message }} <p>
+<p class="writing"> Odgovor: {{ message.reply}} </p>
+<hr>
+{% else %}
+<hr>
+<p class="writing"> Poruka: {{ message.message }} <p>
+<p class="writing"> <a href="/reply/{{message.id}}">Odgovori</a> </p>
+<hr>
+{% endif %}
+{% endfor %}
+<p class="writing">
+{% if currentPage != 1 %}
+    <a href="/messages/{{ currentPage - 1 }}">Prethodna</a>
+{% endif %}
+{% if currentPage != lastPage %}
+    <a href="/messages/{{ currentPage + 1 }}">Sledeca</a>
+{% endif %}</p>
+
+{% endblock %}

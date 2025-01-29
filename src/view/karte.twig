@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Karte
+{% endblock %}
+
+{% block main %}
+{% for karta in karte %}
+        <p class="writing"> <b>Stadion: </b>{{ karta.stadime }}</p>
+        <p class="writing"> <b>Utakmica: </b>{{ karta.game }}</p>
+        <p class="writing"> <b>Orijentacija:</b>{{ karta.ticor}}</p>
+        <p class="writing"> <b>Vreme:</b>{{ karta.time }}</p>
+        <p class="writing"> <b>Cena:</b>{{ karta.ticprice}} RSD</p>
+        <p class="writing"> <b>Preostalo:</b>{{ karta.amount}} kom.</p>
+        <form action="/kupi/{{karta.id}}" method="post">
+        <label>Kolicina</label>
+        <input type="number" name="amount" min="1">
+        <input type="submit" value="Kupi">
+        </form>
+        <hr>
+{% endfor %}
+<p class="writing">
+{% if currentPage != 1 %}
+     <a  href="/karte/{{currentStadium}}/{{ currentPage -1 }}">Prethodna</a>
+{% endif %}
+{% if not lastPage %}
+    <a href="/karte/{{currentStadium}}/{{ currentPage + 1 }}">Sledeca</a>
+{% endif %}</p>
+{% endblock %}

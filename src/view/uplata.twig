@@ -1,0 +1,18 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+   Uplata
+{% endblock %}
+
+{% block main %}
+<hr>
+<form class="writing" method="post" action="/uplata">
+    <label>Balans: {{ korisnik.balance }}</label>
+    <br>
+    <input type="number" name="uplata" min="100">
+    <input type="submit" value="Uplata">
+</form>
+
+<hr>
+
+{% endblock %}

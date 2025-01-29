@@ -1,0 +1,20 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/src/view/style.css">
+</head>
+<body>
+<div class="container">
+    <hr>
+    <form class ="form" action="" method="post">
+        {% block content %}{% endblock %}
+    </form>
+    <h1 class="form"><a class="still" href="/">Prodaja Karata</a></h1>
+
+    <form class ="form" action="/stadiums/search" method="get">
+        <label>Naziv Stadiona:</label>
+        <input type="text" name="imeStadiona">
+        <input type="submit" value="Pretraga">
+    </form>
+</div>
+</body>
+</html>

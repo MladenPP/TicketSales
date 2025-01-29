@@ -1,0 +1,173 @@
+{
+    "stadiums/:page/:ime": {
+        "controller": "Guest",
+        "method": "login",
+        "params":{
+            "page": "number",
+            "ime": "string"
+        }
+    },
+    "stadiums/:page": {
+        "controller": "Guest",
+        "method": "login",
+        "params":{
+            "page": "number"
+        }
+    },"adminstadiums": {
+        "controller": "User",
+        "method": "adminStad"
+    },
+    "adminstadiums/:page": {
+        "controller": "User",
+        "method": "adminStad",
+        "params":{
+            "page": "number"
+        }
+    },
+    "adminstadiums/stadium/:id": {
+        "controller": "User",
+        "method": "stadion",
+        "params":{
+            "id": "number"
+        }
+    },
+    "stadium/:id": {
+        "controller": "User",
+        "method": "stadion",
+        "params": {
+            "id": "number"
+        }
+    },
+    "stadiums/stadium/:id": {
+        "controller": "User",
+        "method": "stadion",
+        "params": {
+            "id": "number"
+        }
+    },
+    "stadiums/search": {
+        "controller": "User",
+        "method": "search"
+    },
+    "stadiums/search/:page": {
+        "controller": "User",
+        "method": "search",
+        "params":{
+            "page": "number"
+        }
+    },
+    "guest": {
+        "controller": "Guest",
+        "method": "login"
+    },
+    "": {
+        "controller": "Guest",
+        "method": "login"
+    },
+    "reg": {
+        "controller": "Register",
+        "method": "reg"
+    },"reg/:id": {
+        "controller": "Register",
+        "method": "reg",
+        "params": {
+            "id": "number"
+        }
+    },
+    "register": {
+        "controller": "Register",
+        "method": "register"
+    },
+    "logout":{
+        "controller":"User",
+        "method":"logout"
+    },
+    "karte/:id/:page": {
+        "controller": "User",
+        "method": "ticket",
+        "params": {
+            "id": "number",
+            "page": "number"
+        }
+    },
+    "kupi/:id": {
+        "controller": "User",
+        "method": "buy",
+        "params": {
+            "id": "number"
+        }
+    },
+    "profil":{
+        "controller": "User",
+        "method": "profil"
+    },
+    "uplata":{
+        "controller": "User",
+        "method": "uplata"
+    },
+    "users/:page":{
+        "controller": "User",
+        "method": "korisnici",
+        "params": {
+            "page": "number"
+        }
+    },
+    "edit/:id":{
+        "controller": "Register",
+        "method": "register",
+        "params": {
+            "id": "number"
+        }
+    },
+    "korisnikdelete/:id":{
+        "controller": "Register",
+        "method": "deleteK",
+        "params": {
+            "id": "number"
+        }
+    },
+    "addticket/:id":{
+        "controller": "Register",
+        "method": "ticket",
+        "params": {
+            "id": "number"
+        }
+    },
+    "addticket/stadium/:id":{
+        "controller": "User",
+        "method": "stadion",
+        "params": {
+            "id": "number"
+        }
+    },
+    "korisnicipdf":{
+        "controller": "User",
+        "method": "pdf"
+    },
+    "podrska":{
+        "controller": "Support",
+        "method": "message"
+    },
+    "messages/:page":{
+        "controller": "Support",
+        "method": "list",
+        "params": {
+            "page": "number"
+        }
+    },
+    "reply/:id":{
+        "controller": "Support",
+        "method": "reply",
+        "params": {
+            "id": "number"
+        }
+    },
+    "replies/:page":{
+        "controller": "Support",
+        "method": "replies",
+        "params": {
+            "page": "number"
+        }
+    }
+
+}

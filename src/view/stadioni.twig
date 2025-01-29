@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Stadioni
+{% endblock %}
+
+{% block main %}
+{% for stadion in stadioni %}
+<p class="writingwb">
+<a class="still" href="stadium/{{ stadion.id }}"> <b>Stadion: </b>{{ stadion.name }}</a>
+{% if admin == 'admin' %}
+<input type="button" value="DodajKartu" onclick="window.location.href='/addticket/{{stadion.id}}'">
+{% endif %}</p>
+        <hr>
+
+{% endfor %}
+<p class="writing">
+{% if currentPage != 1 %}
+    <a href="/{{ admin }}stadiums/{{ currentPage - 1 }}">Prethodna</a>
+{% endif %}
+{% if currentPage != lastPage %}
+    <a href="/{{ admin }}stadiums/{{ currentPage + 1 }}">Sledeca</a>
+{% endif %}</p>
+{% if admin == 'admin' %}
+<form class="writing" action="/adminstadiums" method="post">
+<label>Ime Stadiona:</label>
+<input type="text" name="stadime">
+<label>Info Stadiona:</label>
+<input type="text" name="stadinfo">
+<input type="submit" value="Dodaj">
+<br>
+<label>{{errorMessage}}</label>
+</form>
+{% endif %}
+{% endblock %}

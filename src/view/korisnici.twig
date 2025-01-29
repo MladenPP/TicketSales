@@ -1,0 +1,33 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Korisnici
+{% endblock %}
+
+{% block main %}
+{% for korisnik in korisnici %}
+        <p class="writing"> <b>Ime: </b>{{ korisnik.name}}</p>
+        <p class="writing"> <b>Prezime: </b>{{ korisnik.surname }}</p>
+        <p class="writing"> <b>E-mail:</b>{{ korisnik.email}}</p>
+        <p class="writing"> <b>Klasa:</b>{{ korisnik.class }}</p>
+        <p class="writing"> <b>Balance:</b>{{ korisnik.balance}} RSD</p>
+        <form class="writing">
+            <input type="button" value="Promeni" onclick="window.location.href='/edit/{{korisnik.id}}'">
+            {% if class == "Admin" %}
+                <input type="button" value="Obrisi" onclick="window.location.href='/korisnikdelete/{{korisnik.id}}'">
+            {% endif %}
+            
+        </form>
+        <hr>
+{% endfor %}
+<p class="writing">
+{% if currentPage != 1 %}
+    <a href="/users/{{ currentPage - 1 }}">Prethodna</a>
+{% endif %}
+{% if not lastPage %}
+    <a href="/users/{{ currentPage + 1 }}">Sledeca</a> 
+{% endif %}</p>
+{% if class == "Admin" %}
+    <input type="button" value="Preuzmi podatke" onclick="window.location.href='/korisnicipdf'">
+{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "meni.twig" %}
+
+{% block content %}
+ <label>email:</label> 
+ <input type="text" name="email" >
+ <label>sifra:</label>
+ <input type="password" name="pass" ><br>
+ <p class="left">
+ <input type="submit" value="Prijava">
+ <input type="button" value="Registracija" onclick="window.location.href='/register'">
+ {{errorMessage}}
+ <p>
+  
+{% endblock %}

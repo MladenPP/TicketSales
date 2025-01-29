@@ -1,0 +1,18 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Podrska
+{% endblock %}
+
+{% block main %}
+    <form class="writing" method="post" action="">
+    <textarea name="poruka" rows="8" cols="50"></textarea>
+    <input type="submit" value="Posalji">
+    </form>
+    <p class="writing">{{msg}}</p>
+    {% if korisnik %}
+    <p class="writingwb"><a href="/replies/1"class="still">Pregledaj odgovore</a></p>
+    {% endif %}
+
+
+{% endblock %}

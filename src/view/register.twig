@@ -1,0 +1,51 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Registracija
+{% endblock %}
+
+{% block main %}
+<form class="writing" method="post" action="/reg{{ id }}">
+    <label>Ime:</label>
+    <input type="text" name="ime">
+    <br>
+
+    <label>Prezime:</label>
+    <input type="text" name="prezime">
+    <br>
+
+    <label>e-Mail:</label>
+    <input type="text" name="email">
+    <br>
+  
+    {% if class == 'Admin' or class == 'Menadzer' %}
+    <label>Klasa:</label>
+    <select name="klasa">
+    <option value=""></option>
+    {% if class == 'Admin' %}<option value="Admin">Admin</option>{% endif %}
+    <option value="Menadzer">Menadzer</option>
+    <option value="Korisnik">Korisnik</option>
+    </select>
+    <br>
+
+    <label>Balance</label>
+    <input type="number" name="balans" min="0">
+    <br>
+
+    <input type="submit" value="Izmeni">
+    {% elseif class == 'Korisnik' %}
+    <label>Sifra:</label>
+    <input type="text" name="pass">
+    <br>
+    <input type="submit" value="Izmeni">
+    {% else %}
+    <label>Sifra:</label>
+    <input type="text" name="pass">
+    <br>
+    <input type="button" value="Prijava" onclick="window.location.href='/'">
+    <input type="submit" value="Registruj se">
+    {% endif %}
+    </form>
+    <p class="writing">{{ errorMessage }}</p>
+<hr>
+{% endblock %}

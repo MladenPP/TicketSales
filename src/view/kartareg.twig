@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Registracija
+{% endblock %}
+
+{% block main %}
+<form class="writing" method="post" action="">
+    <label>Utakmica:</label>
+    <input type="text" name="utakmica">
+    <br>
+
+    <label>Vreme:</label>
+    <input type="datetime-local" name="vreme">
+    <br>
+
+    <label>Kolicina:</label>
+    <input type="number" name="kolicina" min="10">
+    <br>
+    
+    <label>Orijentacija:</label>
+    <select name="orijentacija">
+    <option value="Sever">Sever</option>
+    <option value="Jug">Jug</option>
+    <option value="Istok">Istok</option>
+    <option value="Zapad">Zapad</option>
+    <option value="VIP">VIP</option>
+    </select>
+    <br>
+
+    <label>Cena</label>
+    <input type="number" name="cena" min="100" step="0.01">RSD
+    <br>
+
+    <input type="submit" value="Dodaj">
+    </form>
+    <p class="writing">{{ errorMessage }}</p>
+<hr>
+{% endblock %}
